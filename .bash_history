@@ -68,3 +68,20 @@ vi  assignment
 cut -d " " -f3 assignment
 awk -F " " '{print $3}' assignment 
 exit
+sudo apt update
+sudo apt install git
+git --version
+git config --global user.name "harneem"
+git confid --global user.email "harneemramteke@gmail.com"
+git config --global user.email "harneemramteke@gmail.com"
+git status
+git clone git@github.com:harneem/excellent.git
+git --help
+git init
+git add .
+git commit -m "starting wrk in ec2"
+git status
+ls
+git clone git@github.com:harneem/excellent.git
+ls
+pwd
