@@ -1,0 +1,22 @@
+name: Backup Repository
+
+on:
+  schedule:
+    - cron: '*/10 * * * *'  # This cron schedule runs every Sunday at midnight UTC
+
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+      
+    - name: Archive repository
+      run: tar -czf repo-backup.tar.gz ./
+      
+    - name: Upload to backup repository
+      uses: actions/upload-artifact@v2
+      with:
+        name: repo-backup
+        path: repo-backup.tar.gz
